@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'package:http/io_client.dart';
+import 'package:http/http.dart';
 import '../models/product_model.dart';
 
 class ProductRemoteDatasource {
-  final IOClient client;
+  final Client client;
   final Uri link = Uri.parse("https://fakestoreapi.com/products");
 
   ProductRemoteDatasource(this.client);
@@ -13,11 +13,7 @@ class ProductRemoteDatasource {
       link
     );
     
-    final responseDecoded = jsonDecode(response.body);
-
-    print(responseDecoded);
-
-    List<dynamic> data = responseDecoded['data'];
+    List<dynamic> data = jsonDecode(response.body);;
     
     List<ProductModel> products = [];
     data.forEach((item) {
