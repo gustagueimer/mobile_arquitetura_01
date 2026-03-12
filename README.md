@@ -1,16 +1,63 @@
-# product_app
+# Aula 02 - Atividade 04: Aplicação que exibe produtos providos de uma API
 
-A new Flutter project.
+Uma aplicação desenvolvida seguindo os padrões do MVVM, separando o código em diferentes áreas de acordo com seu propósito.
 
-## Getting Started
+Estrutura autal do código do projeto:
 
-This project is a starting point for a Flutter application.
+```
+/lib 
+|
+|_/core
+| |
+| |_/errors
+| |
+| |_/network
+|
+|_/features
+  |
+  |_/product
+    |
+    |_/data
+    | |
+    | |_/datasources
+    | |
+    | |_/models
+    | |
+    | |_/repositories
+    |
+    |_/domain
+    | |
+    | |_/entities
+    | |
+    | |_/repositories
+    |
+    |_/presentation
+      |
+      |_/pages
+      |
+      |_/viewmodels
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Como Rodar
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Requisitos 
+`` Flutter 3.35.3 `` <br>
+`` Dart 3.9.2 `` <br>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Clone este repositório em um folder de seu dispositivo seguindo os segiuntes passosem um terminal: <br>
+```
+git clone https://github.com/gustagueimer/mobile_arquitetura_01  
+``` 
+entre na pasta pelo terminal com: 
+```
+cd mobile_arquitetura_01
+```
+resolva as dependências com:
+```
+flutter pub get
+```
+e inicie a applicação com:
+```
+flutter run -d edge --web-browser-flag="--disable-web-security"
+```
+assim que a aplicação terminar de carregar no navegador, aperte no botão flutuante no canto inferior esquerdo e os produtos da API devem ser carregados na tela.
